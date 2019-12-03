@@ -17,7 +17,7 @@ namespace Personnel.BOL
         public string Siret { get; set; }
 
         [Required]
-        public string Location { get; set; }
+        public string Name { get; set; }
 
         [Required]
         public string Adress { get; set; }

@@ -14,6 +14,9 @@ namespace Personnel.BOL
         private string _label;
         private decimal _minimumSalary; //code decimal precision in DBContext
 
+        [Key]
+        [Required]
+        [RegularExpression(@"^[A-Za-z]{2}\z", ErrorMessage = "Code must have 2 alpha characters")]
         public string Code
         {
             get
@@ -26,6 +29,8 @@ namespace Personnel.BOL
             }
         }
 
+        [Required]
+        [MaxLength(75, ErrorMessage = "75 characters maximum")]
         public string Label
         {
             get
