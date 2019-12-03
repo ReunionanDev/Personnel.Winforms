@@ -49,5 +49,11 @@
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Personnel.Services\Personnel.Services.csproj">
+      <Project>{5cff819e-2a01-483e-9346-14e0366fecd4}</Project>
+      <Name>Personnel.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
-namespace Personnel.BOL.Entities
+namespace Personnel.BOL
 {
     [Serializable]
     public class Role : EntityBase

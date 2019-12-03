@@ -39,3 +39,27 @@ C:\Users\CDA\Desktop\Personnel.Winforms\Personnel.Winforms\obj\Debug\Personnel.W
 C:\Users\CDA\Desktop\Personnel.Winforms\Personnel.Winforms\obj\Debug\Personnel.Winforms.csproj.CopyComplete
 C:\Users\CDA\Desktop\Personnel.Winforms\Personnel.Winforms\obj\Debug\Personnel.Winforms.exe
 C:\Users\CDA\Desktop\Personnel.Winforms\Personnel.Winforms\obj\Debug\Personnel.Winforms.pdb
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\bin\Debug\Personnel.Winforms.exe.config
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\bin\Debug\Personnel.Winforms.exe
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\bin\Debug\Personnel.Winforms.pdb
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\bin\Debug\EntityFramework.dll
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\bin\Debug\Personnel.BOL.dll
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\bin\Debug\Personnel.DAL.dll
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\bin\Debug\Personnel.BOL.pdb
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\bin\Debug\Personnel.DAL.pdb
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\bin\Debug\Personnel.DAL.dll.config
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\bin\Debug\EntityFramework.xml
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\obj\Debug\Personnel.Winforms.csprojAssemblyReference.cache
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\obj\Debug\Personnel.Winforms.FrmAdherent.resources
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\obj\Debug\Personnel.Winforms.FrmRecAdherent.resources
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\obj\Debug\Personnel.Winforms.Properties.Resources.resources
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\obj\Debug\Personnel.Winforms.csproj.GenerateResource.cache
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\obj\Debug\Personnel.Winforms.csproj.CoreCompileInputs.cache
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\obj\Debug\Personnel.Winforms.csproj.CopyComplete
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\obj\Debug\Personnel.Winforms.exe
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\obj\Debug\Personnel.Winforms.pdb
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\bin\Debug\Personnel.Services.dll
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\bin\Debug\Personnel.Services.pdb
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\bin\Debug\Personnel.Services.dll.config

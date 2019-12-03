@@ -21,3 +21,15 @@ C:\Users\CDA\Desktop\Personnel.Winforms\Personnel.DAL\obj\Debug\Personnel.DAL.cs
 C:\Users\CDA\Desktop\Personnel.Winforms\Personnel.DAL\obj\Debug\Personnel.DAL.csproj.CopyComplete
 C:\Users\CDA\Desktop\Personnel.Winforms\Personnel.DAL\obj\Debug\Personnel.DAL.dll
 C:\Users\CDA\Desktop\Personnel.Winforms\Personnel.DAL\obj\Debug\Personnel.DAL.pdb
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.DAL\bin\Debug\Personnel.DAL.dll.config
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.DAL\bin\Debug\Personnel.DAL.dll
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.DAL\bin\Debug\Personnel.DAL.pdb
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.DAL\obj\Debug\Personnel.DAL.csprojAssemblyReference.cache
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.DAL\obj\Debug\Personnel.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.DAL\obj\Debug\Personnel.DAL.csproj.CopyComplete
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.DAL\obj\Debug\Personnel.DAL.dll
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.DAL\obj\Debug\Personnel.DAL.pdb
