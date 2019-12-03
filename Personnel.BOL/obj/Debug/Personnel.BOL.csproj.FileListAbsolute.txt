@@ -1,0 +1,10 @@
+C:\Gael\Personnel.Winforms\Personnel.BOL\bin\Debug\Personnel.BOL.dll
+C:\Gael\Personnel.Winforms\Personnel.BOL\bin\Debug\Personnel.BOL.pdb
+C:\Gael\Personnel.Winforms\Personnel.BOL\obj\Debug\Personnel.BOL.dll
+C:\Gael\Personnel.Winforms\Personnel.BOL\obj\Debug\Personnel.BOL.pdb
+C:\Gael\Personnel.Winforms\Personnel.BOL\obj\Debug\Personnel.BOL.csprojAssemblyReference.cache
+C:\Gael\Personnel.Winforms\Personnel.BOL\obj\Debug\Personnel.BOL.csproj.CoreCompileInputs.cache
+C:\Users\CDA\Desktop\Personnel.Winforms\Personnel.BOL\bin\Debug\Personnel.BOL.dll
+C:\Users\CDA\Desktop\Personnel.Winforms\Personnel.BOL\bin\Debug\Personnel.BOL.pdb
+C:\Users\CDA\Desktop\Personnel.Winforms\Personnel.BOL\obj\Debug\Personnel.BOL.dll
+C:\Users\CDA\Desktop\Personnel.Winforms\Personnel.BOL\obj\Debug\Personnel.BOL.pdb
