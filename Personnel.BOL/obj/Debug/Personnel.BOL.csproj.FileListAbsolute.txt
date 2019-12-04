@@ -18,3 +18,12 @@ C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.BOL\bin\Debug\Pe
 C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.BOL\bin\Debug\Personnel.Services.pdb
 C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.BOL\bin\Debug\Personnel.Services.dll.config
 C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.BOL\obj\Debug\Personnel.BOL.csproj.CopyComplete
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.BOL\bin\Debug\Personnel.BOL.dll
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.BOL\bin\Debug\Personnel.BOL.pdb
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.BOL\bin\Debug\Personnel.Services.dll
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.BOL\bin\Debug\Personnel.Services.pdb
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.BOL\bin\Debug\Personnel.Services.dll.config
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.BOL\obj\Debug\Personnel.BOL.csprojAssemblyReference.cache
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.BOL\obj\Debug\Personnel.BOL.csproj.CopyComplete
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.BOL\obj\Debug\Personnel.BOL.dll
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.BOL\obj\Debug\Personnel.BOL.pdb

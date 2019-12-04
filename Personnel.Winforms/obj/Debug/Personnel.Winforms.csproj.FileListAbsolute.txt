@@ -63,3 +63,26 @@ C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\obj\Deb
 C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\bin\Debug\Personnel.Services.dll
 C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\bin\Debug\Personnel.Services.pdb
 C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Winforms\bin\Debug\Personnel.Services.dll.config
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Winforms\bin\Debug\Personnel.Winforms.exe.config
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Winforms\bin\Debug\Personnel.Winforms.exe
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Winforms\bin\Debug\Personnel.Winforms.pdb
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Winforms\bin\Debug\EntityFramework.dll
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Winforms\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Winforms\bin\Debug\Personnel.BOL.dll
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Winforms\bin\Debug\Personnel.DAL.dll
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Winforms\bin\Debug\Personnel.Services.dll
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Winforms\bin\Debug\Personnel.BOL.pdb
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Winforms\bin\Debug\Personnel.DAL.pdb
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Winforms\bin\Debug\Personnel.DAL.dll.config
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Winforms\bin\Debug\EntityFramework.xml
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Winforms\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Winforms\bin\Debug\Personnel.Services.pdb
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Winforms\bin\Debug\Personnel.Services.dll.config
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Winforms\obj\Debug\Personnel.Winforms.csprojAssemblyReference.cache
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Winforms\obj\Debug\Personnel.Winforms.FrmAdherent.resources
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Winforms\obj\Debug\Personnel.Winforms.FrmRecAdherent.resources
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Winforms\obj\Debug\Personnel.Winforms.Properties.Resources.resources
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Winforms\obj\Debug\Personnel.Winforms.csproj.GenerateResource.cache
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Winforms\obj\Debug\Personnel.Winforms.csproj.CopyComplete
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Winforms\obj\Debug\Personnel.Winforms.exe
+C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Winforms\obj\Debug\Personnel.Winforms.pdb

@@ -8,7 +8,8 @@ using Personnel.Services;
 
 namespace Personnel.BOL
 {
-    public class Establishment
+    [Serializable]
+    public class Establishment : EntityBase
     {
         [Key]
         [Required(ErrorMessage = "Siret is required")]
@@ -22,6 +23,4 @@ namespace Personnel.BOL
         [Required]
         public string Adress { get; set; }
     }
-    
-
 }

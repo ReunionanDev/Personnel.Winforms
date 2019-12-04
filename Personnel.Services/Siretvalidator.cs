@@ -15,6 +15,7 @@ namespace Personnel.Services
             return Luhn(value.ToString());
             
         }
+
         public static bool Luhn(string digits)
         {
             return digits.All(char.IsDigit) && digits.Reverse()
@@ -25,5 +26,4 @@ namespace Personnel.Services
                 ).Sum() % 10 == 0;
         }
     }
-    
 }

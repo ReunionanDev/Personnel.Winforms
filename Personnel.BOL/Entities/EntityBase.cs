@@ -25,6 +25,7 @@ namespace Personnel.BOL
                 return isValid();
             }
         }
+
         public string this[string property]
         {
             get
@@ -62,6 +63,7 @@ namespace Personnel.BOL
                 }
             }
         }
+
         private bool isValid()
         {
             //var results = new List<ValidationResult>();
@@ -70,7 +72,8 @@ namespace Personnel.BOL
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-         protected void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
+
+        protected void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
         public void BeginEdit()
@@ -80,8 +83,8 @@ namespace Personnel.BOL
                 _clone = this.Clone();
                 inTxn = true;
             }
-
         }
+
         public void CancelEdit()
         {
             Type t = this.GetType();
@@ -101,8 +104,8 @@ namespace Personnel.BOL
             using (Stream stream = new MemoryStream())
             { 
                 formatter.Serialize(stream, this);
-            stream.Seek(0, SeekOrigin.Begin);
-            return formatter.Deserialize(stream);
+                stream.Seek(0, SeekOrigin.Begin);
+                return formatter.Deserialize(stream);
             }
         }
 
@@ -115,5 +118,4 @@ namespace Personnel.BOL
             }
         }
     }
-
 }

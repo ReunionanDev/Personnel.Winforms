@@ -20,6 +20,8 @@ namespace Personnel.BOL
 
         [Required(ErrorMessage = "Last name required")]
         [MinLength(2, ErrorMessage = "Last name must be at least 2 characters in lenght")]
+        [MaxLength(75, ErrorMessage = "75 characters maximum")]
+        [RegularExpression(@"^[a-zA-Z\s]*$", ErrorMessage = "Only alpha characters")]
         public string LastName
         {
             get
@@ -37,7 +39,9 @@ namespace Personnel.BOL
         }
 
         [Required(ErrorMessage = "First name required")]
-        [RegularExpression(@"^[a-zA-Z\s]*$", ErrorMessage = "ID must respect the format : 11ABC11")]
+        [MinLength(2, ErrorMessage = "First name must be at least 2 characters in lenght")]
+        [MaxLength(75, ErrorMessage = "75 characters maximum")]
+        [RegularExpression(@"^[a-zA-Z\s]*$", ErrorMessage = "Only alpha characters")]
         public string FirstName
         {
             get
@@ -55,8 +59,7 @@ namespace Personnel.BOL
         }
 
         [Required(ErrorMessage = "birthdate is required")]
-        [Range(typeof(DateTime), "1/1/1900", "1/1/2001",
-                ErrorMessage = "Value for {0} must be between {1:d} and {2:d}")]
+        [Range(typeof(DateTime), "1/1/1900", "1/1/2001", ErrorMessage = "Value for {0} must be between {1:d} and {2:d}")]
         [DataType(DataType.Date)]
         public DateTime BirthDate
         {
@@ -99,8 +102,5 @@ namespace Personnel.BOL
         public DateTime? EndDate { get; set; }
 
         public decimal WorkQuantity { get; set; }
-
     }
-
-    
 }
