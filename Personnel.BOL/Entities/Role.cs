@@ -10,22 +10,22 @@ namespace Personnel.BOL
     [Serializable]
     public class Role : EntityBase
     {
-        private string _code;
+        private string _id;
         private string _label;
         private decimal _minimumSalary; //code decimal precision in DBContext
 
         [Key]
         [Required]
-        [RegularExpression(@"^[A-Za-z]{2}\z", ErrorMessage = "Code must have 2 alpha characters")]
-        public string Code
+        [RegularExpression(@"^[A-Za-z]{2}\z", ErrorMessage = "Id must have 2 alpha characters")]
+        public string Id
         {
             get
             {
-                return this._code;
+                return this._id;
             }
             set
             {
-                this._code = value;
+                this._id = value;
             }
         }
 

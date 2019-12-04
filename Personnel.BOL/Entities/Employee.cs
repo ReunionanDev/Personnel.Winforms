@@ -93,7 +93,11 @@ namespace Personnel.BOL
             }
         }
 
+        public string EstablishmentSiret { get; set; }
+
         public Establishment Establishment { get; set; }
+
+        public int RoleId { get; set; }
 
         public Role Role { get; set; }
 
