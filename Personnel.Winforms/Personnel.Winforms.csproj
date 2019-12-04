@@ -90,6 +90,7 @@
     <None Include="Properties\DataSources\Personnel.BOL.Employee.datasource" />
     <None Include="Properties\DataSources\Personnel.BOL.EntityBase.datasource" />
     <None Include="Properties\DataSources\Personnel.BOL.Role.datasource" />
+    <None Include="Properties\DataSources\Personnel.DAL.PersonnelRepository.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -111,6 +112,10 @@
     <ProjectReference Include="..\Personnel.DAL\Personnel.DAL.csproj">
       <Project>{7ae5ffdd-f409-4c3b-9369-8679672538af}</Project>
       <Name>Personnel.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Personnel.Services\Personnel.Services.csproj">
+      <Project>{5cff819e-2a01-483e-9346-14e0366fecd4}</Project>
+      <Name>Personnel.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

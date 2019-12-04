@@ -5,7 +5,6 @@ C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Services\bin\Deb
 C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Services\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Services\bin\Debug\EntityFramework.xml
 C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Services\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Services\obj\Debug\Personnel.Services.csprojAssemblyReference.cache
 C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Services\obj\Debug\Personnel.Services.csproj.CoreCompileInputs.cache
 C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Services\obj\Debug\Personnel.Services.csproj.CopyComplete
 C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.Services\obj\Debug\Personnel.Services.dll

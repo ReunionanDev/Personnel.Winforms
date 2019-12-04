@@ -17,3 +17,7 @@ C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Test\obj\Debug\Test.pdb
 C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Test\bin\Debug\Personnel.Services.dll
 C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Test\bin\Debug\Personnel.Services.pdb
 C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Test\bin\Debug\Personnel.Services.dll.config
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Test\bin\Debug\EntityFramework.dll
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Test\bin\Debug\EntityFramework.xml
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Test\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Test\bin\Debug\EntityFramework.SqlServer.xml

@@ -8,8 +8,13 @@ using Personnel.BOL;
 
 namespace Personnel.DAL
 {
-    public partial class PersonnelDBContext
+    public class PersonnelDBContext : DbContext
     {
+        /*public PersonnelDBContext() : base()
+        {
+
+        }*/
+
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Establishment> Establishments { get; set; }
         public DbSet<Role> Roles { get; set; }

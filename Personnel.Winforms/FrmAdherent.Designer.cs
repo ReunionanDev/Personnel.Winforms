@@ -118,7 +118,7 @@
             // 
             // adherentBindingSource
             // 
-            this.adherentBindingSource.DataSource = typeof(Personnel.BOL.Employee);
+            this.adherentBindingSource.DataSource = typeof(Personnel.DAL.PersonnelRepository);
             // 
             // gbRecherche
             // 
