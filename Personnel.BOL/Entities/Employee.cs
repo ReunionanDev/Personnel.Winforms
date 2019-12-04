@@ -90,6 +90,15 @@ namespace Personnel.BOL
             }
         }
 
+        public Establishment Establishment { get; set; }
+
+        public Role Role { get; set; }
+
+        public DateTime StartDate { get; set; }
+
+        public DateTime? EndDate { get; set; }
+
+        public decimal WorkQuantity { get; set; }
 
     }
 
