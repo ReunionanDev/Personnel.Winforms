@@ -54,5 +54,7 @@ namespace Personnel.BOL
                 this._minimumSalary = value;
             }
         }
+
+        public List<Employee> Employees { get; set; }
     }
 }

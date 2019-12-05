@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Personnel.BOL;
+using Personnel.DAL;
+using System.Data.Entity;
 
 namespace Personnel.Winforms
 {
@@ -25,26 +28,14 @@ namespace Personnel.Winforms
 
         private static void InitializeData()
         {
-            Adherents = new HashSet<Employee>()
+            Database.SetInitializer(new CreateDatabaseIfNotExists<PersonnelDBContext>());
+            PersonnelDBContext dbcontext = new PersonnelDBContext();
+            if (dbcontext.Employees.Count()==0)
             {
-                new Employee(){
-                   AdherentID = "96GBA11",
-                   LastName="Bost",
-                   FirstName = "Vincent",
-                   BirthDate = new DateTime(1988,08,30)
-                },
-                 new Employee(){
-                   AdherentID = "00GTO15",
-                   LastName="Pouligane",
-                   FirstName = "Arnaud"
-                },
-                new Employee()
-                {
-                   AdherentID = "98ACE15",
-                   LastName ="Morillon",
-                   FirstName = "Jean"
-                }
-            };
+
+            }
+          
+
         }
     }
 }

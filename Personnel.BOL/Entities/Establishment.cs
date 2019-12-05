@@ -22,5 +22,7 @@ namespace Personnel.BOL
 
         [Required]
         public string Adress { get; set; }
+
+        public List<Employee> Employees { get; set; }
     }
 }
