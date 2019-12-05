@@ -23,6 +23,13 @@ namespace Personnel.BOL
         [Required]
         public string Adress { get; set; }
 
+        [Required]
+        public string Town { get; set; }
+
+        [Required]
+        [RegularExpression(@"^[0-9]{5}\z", ErrorMessage = "Postcode incorrect")]
+        public int PostCode { get; set; }
+
         public List<Employee> Employees { get; set; }
     }
 }

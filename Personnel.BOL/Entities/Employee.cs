@@ -97,7 +97,7 @@ namespace Personnel.BOL
 
         public Establishment Establishment { get; set; }
 
-        public int RoleId { get; set; }
+        public string RoleId { get; set; }
 
         public Role Role { get; set; }
 

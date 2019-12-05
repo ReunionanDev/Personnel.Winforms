@@ -51,3 +51,8 @@ C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.DAL\obj\Debug\Personnel.D
 C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.DAL\obj\Debug\Personnel.DAL.pdb
 C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.DAL\obj\Debug\Personnel.DAL.Migrations.InitialCreate.resources
 C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.DAL\obj\Debug\Personnel.DAL.csproj.GenerateResource.cache
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.DAL\bin\Debug\Personnel.BOL.dll
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.DAL\bin\Debug\Personnel.Services.dll
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.DAL\bin\Debug\Personnel.BOL.pdb
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.DAL\bin\Debug\Personnel.Services.pdb
+C:\Users\Gael RB\Documents\Code C#\Personnel.Winforms\Personnel.DAL\bin\Debug\Personnel.Services.dll.config
