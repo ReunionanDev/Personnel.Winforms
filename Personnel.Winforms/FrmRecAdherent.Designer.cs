@@ -119,8 +119,8 @@
             // 
             // adherentIDDataGridViewTextBoxColumn
             // 
-            this.adherentIDDataGridViewTextBoxColumn.DataPropertyName = "AdherentID";
-            this.adherentIDDataGridViewTextBoxColumn.HeaderText = "AdherentID";
+            this.adherentIDDataGridViewTextBoxColumn.DataPropertyName = "EmployeeID";
+            this.adherentIDDataGridViewTextBoxColumn.HeaderText = "EmployeeID";
             this.adherentIDDataGridViewTextBoxColumn.Name = "adherentIDDataGridViewTextBoxColumn";
             this.adherentIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.adherentIDDataGridViewTextBoxColumn.Width = 86;

@@ -259,7 +259,7 @@
             // 
             // adherentIDTextBox
             // 
-            this.adherentIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adherentBindingSource, "AdherentID", true));
+            this.adherentIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adherentBindingSource, "EmployeeID", true));
             this.adherentIDTextBox.Location = new System.Drawing.Point(84, 28);
             this.adherentIDTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.adherentIDTextBox.Name = "adherentIDTextBox";

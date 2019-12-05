@@ -16,7 +16,7 @@ namespace Personnel.BOL
         [Key]
         [Required(ErrorMessage ="ID is required")]
         [RegularExpression(@"^[0-9]{2}[A-Za-z]{3}[0-9]{2}\z", ErrorMessage = "ID must respect the format : 11ABC11")]
-        public string AdherentID { get; set; }
+        public string EmployeeID { get; set; }
 
         [Required(ErrorMessage = "Last name required")]
         [MinLength(2, ErrorMessage = "Last name must be at least 2 characters in lenght")]

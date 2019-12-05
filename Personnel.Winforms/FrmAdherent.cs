@@ -84,7 +84,7 @@ namespace Personnel.Winforms
         }
         private Employee SelectionnerAdherentByID(string adherentID)
         {
-            return Program.Adherents.Where(a=>a.AdherentID==adherentID).FirstOrDefault();
+            return Program.Adherents.Where(a=>a.EmployeeID==adherentID).FirstOrDefault();
         }
         private Employee SelectionnerAdherent(string debNom)
         {
