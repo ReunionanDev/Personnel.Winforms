@@ -13,7 +13,8 @@ namespace Personnel.DAL
         
         public List<Employee> GetEmployees()
         {
-            return new PersonnelDBContext().Employees.ToList();
+            PersonnelDBContext personnelDBContext = new PersonnelDBContext();
+            return personnelDBContext.Employees.ToList();
         }
     }
 }

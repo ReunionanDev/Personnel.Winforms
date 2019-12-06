@@ -17,7 +17,6 @@ C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Services\bin\Debug\Entity
 C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Services\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Services\bin\Debug\EntityFramework.xml
 C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Services\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Services\obj\Debug\Personnel.Services.csprojAssemblyReference.cache
 C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Services\obj\Debug\Personnel.Services.csproj.CopyComplete
 C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Services\obj\Debug\Personnel.Services.dll
 C:\Users\CDA\source\repos\Personnel.Winforms\Personnel.Services\obj\Debug\Personnel.Services.pdb

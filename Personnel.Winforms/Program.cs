@@ -34,11 +34,12 @@ namespace Personnel.Winforms
 
             PersonnelDBContext dbcontext = new PersonnelDBContext();
             
-            //PersonnelRepository repository = new PersonnelRepository();
-            //repository.GetEmployees();
-            if (dbcontext.Employees.Count()==0)
+            PersonnelRepository repository = new PersonnelRepository();
+            
+            if (dbcontext.Employees.Count()!=0)
             {
-
+                List<Employee> list = new List<Employee>();
+                list = repository.GetEmployees();
             }
           
 

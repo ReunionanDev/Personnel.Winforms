@@ -43,6 +43,7 @@ namespace Personnel.BOL
             }
         }
 
+        [Required]
         public decimal MinimumSalary
         {
             get

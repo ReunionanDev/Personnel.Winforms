@@ -13,8 +13,6 @@ namespace Personnel.Winforms
 {
     public partial class FrmAdherent : Form
     {
-       
-
         enum Contexte
         {
             Initial,
@@ -22,13 +20,16 @@ namespace Personnel.Winforms
             Edition,
             Nouveau
         }
+
         private Contexte contexteActuel;
+
         public FrmAdherent()
         {
             InitializeComponent();
             GererContextes(Contexte.Initial);
           //  adherentBindingSource.DataSource = Program.Adherents;
         }
+
         private void GererContextes(Contexte contexte)
         {
             contexteActuel = contexte;
@@ -78,14 +79,17 @@ namespace Personnel.Winforms
                     break;
             }
         }
+
         private void btnRechercher_Click(object sender, EventArgs e)
         {
             RechercherAdherent();
         }
+
         private Employee SelectionnerAdherentByID(string adherentID)
         {
             return Program.Adherents.Where(a=>a.EmployeeID==adherentID).FirstOrDefault();
         }
+
         private Employee SelectionnerAdherent(string debNom)
         {
 
