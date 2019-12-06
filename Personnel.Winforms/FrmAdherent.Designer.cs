@@ -278,6 +278,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmAdherent";
             this.Text = "Gestion Adherent";
+            this.Load += new System.EventHandler(this.FrmAdherent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AdherentEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adherentBindingSource)).EndInit();
             this.gbRecherche.ResumeLayout(false);

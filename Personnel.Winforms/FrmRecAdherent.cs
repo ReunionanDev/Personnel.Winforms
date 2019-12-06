@@ -1,4 +1,5 @@
 ﻿using Personnel.BOL;
+using Personnel.DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,21 +15,23 @@ namespace Personnel.Winforms
     public partial class FrmRecAdherent : Form
     {
         BindingSource adherentBSG;
+        PersonnelRepository repository;
+
         public FrmRecAdherent()
         {
             InitializeComponent();
         }
+
         public FrmRecAdherent(string debNom, BindingSource adherentBS) : this()
         {
             adherentBSG = adherentBS;
-            HashSet<Employee> adherents = Program.Adherents.Where(a=>a.LastName.StartsWith(debNom,StringComparison.CurrentCultureIgnoreCase)).ToHashSet();
+            repository = new PersonnelRepository();
+            List<Employee> employees = repository.GetEmployees().Where(a=>a.LastName.StartsWith(debNom,StringComparison.CurrentCultureIgnoreCase)).ToList();
 
-            if (adherents.Count > 0)
+            if (employees.Count > 0)
             {
-                adherentBindingSource.DataSource = adherents;
-
+                adherentBindingSource.DataSource = employees;
             }
-
         }
 
         private void adherentDataGridView_DoubleClick(object sender, EventArgs e)

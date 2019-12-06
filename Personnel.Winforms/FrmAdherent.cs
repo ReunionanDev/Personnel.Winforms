@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Personnel.BOL;
+using Personnel.DAL;
 
 namespace Personnel.Winforms
 {
@@ -22,6 +23,9 @@ namespace Personnel.Winforms
         }
 
         private Contexte contexteActuel;
+
+        PersonnelDBContext dbcontext;
+        PersonnelRepository repository;
 
         public FrmAdherent()
         {
@@ -181,6 +185,13 @@ namespace Personnel.Winforms
             GererContextes(Contexte.Nouveau);
             adherentBindingSource.AddNew();
             AdherentEP.Clear();
+        }
+
+        private void FrmAdherent_Load(object sender, EventArgs e)
+        {
+            repository = new PersonnelRepository();
+            List<Employee> list = repository.GetEmployees();
+            adherentBindingSource.DataSource = list;
         }
     }
 }
