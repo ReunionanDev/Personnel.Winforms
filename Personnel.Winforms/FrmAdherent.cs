@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Personnel.BOL;
 using Personnel.DAL;
+using System.Data.Entity;
 
 namespace Personnel.Winforms
 {
@@ -24,8 +25,9 @@ namespace Personnel.Winforms
 
         private Contexte contexteActuel;
 
-        PersonnelDBContext dbcontext;
+        PersonnelDBContext dbcontext = new PersonnelDBContext();
         PersonnelRepository repository;
+        Employee employee = new Employee();
 
         public FrmAdherent()
         {
@@ -89,9 +91,10 @@ namespace Personnel.Winforms
             RechercherAdherent();
         }
 
-        private Employee SelectionnerAdherentByID(string adherentID)
+        private Employee SelectionnerAdherentByID(string employeeID)
         {
-            return Program.Adherents.Where(a=>a.EmployeeID==adherentID).FirstOrDefault();
+            repository = new PersonnelRepository();
+            return repository.GetEmployees().Where(a=>a.EmployeeID==employeeID).FirstOrDefault();
         }
 
         private Employee SelectionnerAdherent(string debNom)
@@ -120,18 +123,18 @@ namespace Personnel.Winforms
             // Vérifier la validité 
             if ((adherentBindingSource.Current as Employee).IsValid)
             {
-
-            adherentBindingSource.EndEdit();
-            if (contexteActuel == Contexte.Nouveau)
-            {
-               // Create
-            }
-            if (contexteActuel == Contexte.Edition)
-            {
-               // Update
-            }
-
-            GererContextes(Contexte.Initial);
+                if (contexteActuel == Contexte.Nouveau)
+                {
+                    // Create
+                }
+                if (contexteActuel == Contexte.Edition)
+                {
+                    // Update
+                    employee = adherentBindingSource.Current as Employee;
+                    dbcontext.Entry(employee).State = EntityState.Modified;
+                    dbcontext.SaveChanges();
+                }
+                GererContextes(Contexte.Initial);
             }
         }
 

@@ -18,7 +18,10 @@ namespace Personnel.DAL
             //Database.SetInitializer<SchoolDBContext>(new SchoolDBInitializer());
             Database.SetInitializer(new PersonnelDBInitializer());
         }
-
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Types().Configure(t => t.MapToStoredProcedures());
+        }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Establishment> Establishments { get; set; }
         public DbSet<Role> Roles { get; set; }

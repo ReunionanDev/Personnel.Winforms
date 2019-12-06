@@ -27,12 +27,12 @@ namespace Personnel.DAL
                 Town = "BRIVE LA GAILLARDE",
                 PostCode = 19100,
                 Employees = new List<Employee>()
-            {
+                {
                 new Employee()
                 {
                     EmployeeID = "12ABC12", BirthDate = new DateTime(1988,08,30), FirstName = "Gael", LastName = "RAMIDGE", StartDate = new DateTime(2019,07,01), RoleId = "ST", WorkQuantity = 1
                 }
-            }
+                }
             };
             context.Roles.Add(Stagiaire);
             context.Establishments.Add(Establishment1);

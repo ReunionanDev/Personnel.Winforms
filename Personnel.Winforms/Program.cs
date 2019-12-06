@@ -36,11 +36,10 @@ namespace Personnel.Winforms
             
             PersonnelRepository repository = new PersonnelRepository();
             
-            if (dbcontext.Employees.Count()!=0)
+            /*if (dbcontext.Employees.Count()!=0)
             {
-                List<Employee> list = new List<Employee>();
-                list = repository.GetEmployees();
-            }
+                
+            }*/
           
 
         }
