@@ -31,15 +31,16 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.adherentDataGridView = new System.Windows.Forms.DataGridView();
-            this.BirthDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adherentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prenomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adherentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.BirthDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GrossSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adherentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.adherentDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adherentBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -72,18 +73,21 @@
             // 
             this.adherentDataGridView.AllowUserToAddRows = false;
             this.adherentDataGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
+            this.adherentDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.adherentDataGridView.AutoGenerateColumns = false;
             this.adherentDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.adherentDataGridView.BackgroundColor = System.Drawing.Color.White;
-            this.adherentDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.adherentDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.adherentDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.adherentDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.adherentDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.adherentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.adherentDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.adherentIDDataGridViewTextBoxColumn,
@@ -92,15 +96,16 @@
             this.BirthDate,
             this.GrossSalary});
             this.adherentDataGridView.DataSource = this.adherentBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.adherentDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.adherentDataGridView.Location = new System.Drawing.Point(85, 42);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkTurquoise;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.adherentDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            this.adherentDataGridView.EnableHeadersVisualStyles = false;
+            this.adherentDataGridView.Location = new System.Drawing.Point(53, 41);
             this.adherentDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.adherentDataGridView.Name = "adherentDataGridView";
             this.adherentDataGridView.ReadOnly = true;
@@ -109,21 +114,13 @@
             this.adherentDataGridView.TabIndex = 3;
             this.adherentDataGridView.DoubleClick += new System.EventHandler(this.adherentDataGridView_DoubleClick);
             // 
-            // BirthDate
-            // 
-            this.BirthDate.DataPropertyName = "BirthDate";
-            this.BirthDate.HeaderText = "BirthDate";
-            this.BirthDate.Name = "BirthDate";
-            this.BirthDate.ReadOnly = true;
-            this.BirthDate.Width = 76;
-            // 
             // adherentIDDataGridViewTextBoxColumn
             // 
             this.adherentIDDataGridViewTextBoxColumn.DataPropertyName = "EmployeeID";
             this.adherentIDDataGridViewTextBoxColumn.HeaderText = "EmployeeID";
             this.adherentIDDataGridViewTextBoxColumn.Name = "adherentIDDataGridViewTextBoxColumn";
             this.adherentIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.adherentIDDataGridViewTextBoxColumn.Width = 86;
+            this.adherentIDDataGridViewTextBoxColumn.Width = 88;
             // 
             // nomDataGridViewTextBoxColumn
             // 
@@ -131,7 +128,7 @@
             this.nomDataGridViewTextBoxColumn.HeaderText = "LastName";
             this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
             this.nomDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomDataGridViewTextBoxColumn.Width = 80;
+            this.nomDataGridViewTextBoxColumn.Width = 79;
             // 
             // prenomDataGridViewTextBoxColumn
             // 
@@ -139,11 +136,15 @@
             this.prenomDataGridViewTextBoxColumn.HeaderText = "FirstName";
             this.prenomDataGridViewTextBoxColumn.Name = "prenomDataGridViewTextBoxColumn";
             this.prenomDataGridViewTextBoxColumn.ReadOnly = true;
-            this.prenomDataGridViewTextBoxColumn.Width = 79;
+            this.prenomDataGridViewTextBoxColumn.Width = 78;
             // 
-            // adherentBindingSource
+            // BirthDate
             // 
-            this.adherentBindingSource.DataSource = typeof(Personnel.BOL.Employee);
+            this.BirthDate.DataPropertyName = "BirthDate";
+            this.BirthDate.HeaderText = "BirthDate";
+            this.BirthDate.Name = "BirthDate";
+            this.BirthDate.ReadOnly = true;
+            this.BirthDate.Width = 75;
             // 
             // GrossSalary
             // 
@@ -151,7 +152,11 @@
             this.GrossSalary.HeaderText = "GrossSalary";
             this.GrossSalary.Name = "GrossSalary";
             this.GrossSalary.ReadOnly = true;
-            this.GrossSalary.Width = 88;
+            this.GrossSalary.Width = 87;
+            // 
+            // adherentBindingSource
+            // 
+            this.adherentBindingSource.DataSource = typeof(Personnel.BOL.Employee);
             // 
             // FrmRecAdherent
             // 
