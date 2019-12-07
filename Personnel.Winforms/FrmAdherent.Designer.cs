@@ -37,12 +37,13 @@
             System.Windows.Forms.Label DateNaissanceLabel;
             System.Windows.Forms.Label salaireLabel;
             System.Windows.Forms.Label label2;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAdherent));
             System.Windows.Forms.Label ArrivéeLabel;
             System.Windows.Forms.Label departLabel;
             System.Windows.Forms.Label etablissementLabel;
             System.Windows.Forms.Label roleLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAdherent));
             this.AdherentEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.adherentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gbRecherche = new System.Windows.Forms.GroupBox();
             this.txtDebNom = new System.Windows.Forms.TextBox();
             this.btnRechercher = new System.Windows.Forms.Button();
@@ -53,6 +54,10 @@
             this.btnNouveau = new System.Windows.Forms.Button();
             this.btnEditer = new System.Windows.Forms.Button();
             this.gbDetails = new System.Windows.Forms.GroupBox();
+            this.roleTextbox = new System.Windows.Forms.TextBox();
+            this.EtablissementTextbox = new System.Windows.Forms.TextBox();
+            this.departTextbox = new System.Windows.Forms.TextBox();
+            this.arriveeTextbox = new System.Windows.Forms.TextBox();
             this.TempsTextbox = new System.Windows.Forms.TextBox();
             this.salaireTextbox = new System.Windows.Forms.TextBox();
             this.DateNaissanceTextbox = new System.Windows.Forms.TextBox();
@@ -60,11 +65,7 @@
             this.prenomTextBox = new System.Windows.Forms.TextBox();
             this.adherentIDTextBox = new System.Windows.Forms.TextBox();
             this.AfpaPic = new System.Windows.Forms.PictureBox();
-            this.arriveeTextbox = new System.Windows.Forms.TextBox();
-            this.departTextbox = new System.Windows.Forms.TextBox();
-            this.EtablissementTextbox = new System.Windows.Forms.TextBox();
-            this.roleTextbox = new System.Windows.Forms.TextBox();
-            this.adherentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             label1 = new System.Windows.Forms.Label();
             nomLabel = new System.Windows.Forms.Label();
             prenomLabel = new System.Windows.Forms.Label();
@@ -78,11 +79,12 @@
             etablissementLabel = new System.Windows.Forms.Label();
             roleLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AdherentEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adherentBindingSource)).BeginInit();
             this.gbRecherche.SuspendLayout();
             this.gbBoutonOpe.SuspendLayout();
             this.gbDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AfpaPic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.adherentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -173,10 +175,58 @@
             label2.TabIndex = 13;
             label2.Text = "Temps de travail:";
             // 
+            // ArrivéeLabel
+            // 
+            ArrivéeLabel.AutoSize = true;
+            ArrivéeLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            ArrivéeLabel.Location = new System.Drawing.Point(15, 262);
+            ArrivéeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            ArrivéeLabel.Name = "ArrivéeLabel";
+            ArrivéeLabel.Size = new System.Drawing.Size(126, 21);
+            ArrivéeLabel.TabIndex = 15;
+            ArrivéeLabel.Text = "Date d\'arrivée:";
+            // 
+            // departLabel
+            // 
+            departLabel.AutoSize = true;
+            departLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            departLabel.Location = new System.Drawing.Point(15, 302);
+            departLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            departLabel.Name = "departLabel";
+            departLabel.Size = new System.Drawing.Size(138, 21);
+            departLabel.TabIndex = 20;
+            departLabel.Text = "Date de départ:";
+            // 
+            // etablissementLabel
+            // 
+            etablissementLabel.AutoSize = true;
+            etablissementLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            etablissementLabel.Location = new System.Drawing.Point(15, 342);
+            etablissementLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            etablissementLabel.Name = "etablissementLabel";
+            etablissementLabel.Size = new System.Drawing.Size(122, 21);
+            etablissementLabel.TabIndex = 21;
+            etablissementLabel.Text = "Etablissement:";
+            // 
+            // roleLabel
+            // 
+            roleLabel.AutoSize = true;
+            roleLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            roleLabel.Location = new System.Drawing.Point(15, 382);
+            roleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            roleLabel.Name = "roleLabel";
+            roleLabel.Size = new System.Drawing.Size(82, 21);
+            roleLabel.TabIndex = 22;
+            roleLabel.Text = "Fonction:";
+            // 
             // AdherentEP
             // 
             this.AdherentEP.ContainerControl = this;
             this.AdherentEP.DataSource = this.adherentBindingSource;
+            // 
+            // adherentBindingSource
+            // 
+            this.adherentBindingSource.DataSource = typeof(Personnel.BOL.Employee);
             // 
             // gbRecherche
             // 
@@ -340,6 +390,42 @@
             this.gbDetails.TabIndex = 4;
             this.gbDetails.TabStop = false;
             // 
+            // roleTextbox
+            // 
+            this.roleTextbox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adherentBindingSource, "RoleId", true));
+            this.roleTextbox.Location = new System.Drawing.Point(195, 383);
+            this.roleTextbox.Margin = new System.Windows.Forms.Padding(2);
+            this.roleTextbox.Name = "roleTextbox";
+            this.roleTextbox.Size = new System.Drawing.Size(184, 20);
+            this.roleTextbox.TabIndex = 19;
+            // 
+            // EtablissementTextbox
+            // 
+            this.EtablissementTextbox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "Name", true));
+            this.EtablissementTextbox.Location = new System.Drawing.Point(195, 343);
+            this.EtablissementTextbox.Margin = new System.Windows.Forms.Padding(2);
+            this.EtablissementTextbox.Name = "EtablissementTextbox";
+            this.EtablissementTextbox.Size = new System.Drawing.Size(184, 20);
+            this.EtablissementTextbox.TabIndex = 18;
+            // 
+            // departTextbox
+            // 
+            this.departTextbox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adherentBindingSource, "EndDate", true));
+            this.departTextbox.Location = new System.Drawing.Point(195, 303);
+            this.departTextbox.Margin = new System.Windows.Forms.Padding(2);
+            this.departTextbox.Name = "departTextbox";
+            this.departTextbox.Size = new System.Drawing.Size(184, 20);
+            this.departTextbox.TabIndex = 17;
+            // 
+            // arriveeTextbox
+            // 
+            this.arriveeTextbox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adherentBindingSource, "StartDate", true));
+            this.arriveeTextbox.Location = new System.Drawing.Point(195, 263);
+            this.arriveeTextbox.Margin = new System.Windows.Forms.Padding(2);
+            this.arriveeTextbox.Name = "arriveeTextbox";
+            this.arriveeTextbox.Size = new System.Drawing.Size(184, 20);
+            this.arriveeTextbox.TabIndex = 16;
+            // 
             // TempsTextbox
             // 
             this.TempsTextbox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adherentBindingSource, "WorkQuantity", true));
@@ -406,89 +492,9 @@
             this.AfpaPic.TabIndex = 6;
             this.AfpaPic.TabStop = false;
             // 
-            // ArrivéeLabel
+            // bindingSource1
             // 
-            ArrivéeLabel.AutoSize = true;
-            ArrivéeLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            ArrivéeLabel.Location = new System.Drawing.Point(15, 262);
-            ArrivéeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            ArrivéeLabel.Name = "ArrivéeLabel";
-            ArrivéeLabel.Size = new System.Drawing.Size(126, 21);
-            ArrivéeLabel.TabIndex = 15;
-            ArrivéeLabel.Text = "Date d\'arrivée:";
-            // 
-            // arriveeTextbox
-            // 
-            this.arriveeTextbox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adherentBindingSource, "WorkQuantity", true));
-            this.arriveeTextbox.Location = new System.Drawing.Point(195, 263);
-            this.arriveeTextbox.Margin = new System.Windows.Forms.Padding(2);
-            this.arriveeTextbox.Name = "arriveeTextbox";
-            this.arriveeTextbox.Size = new System.Drawing.Size(184, 20);
-            this.arriveeTextbox.TabIndex = 16;
-            // 
-            // departTextbox
-            // 
-            this.departTextbox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adherentBindingSource, "WorkQuantity", true));
-            this.departTextbox.Location = new System.Drawing.Point(195, 303);
-            this.departTextbox.Margin = new System.Windows.Forms.Padding(2);
-            this.departTextbox.Name = "departTextbox";
-            this.departTextbox.Size = new System.Drawing.Size(184, 20);
-            this.departTextbox.TabIndex = 17;
-            // 
-            // EtablissementTextbox
-            // 
-            this.EtablissementTextbox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adherentBindingSource, "WorkQuantity", true));
-            this.EtablissementTextbox.Location = new System.Drawing.Point(195, 343);
-            this.EtablissementTextbox.Margin = new System.Windows.Forms.Padding(2);
-            this.EtablissementTextbox.Name = "EtablissementTextbox";
-            this.EtablissementTextbox.Size = new System.Drawing.Size(184, 20);
-            this.EtablissementTextbox.TabIndex = 18;
-            // 
-            // roleTextbox
-            // 
-            this.roleTextbox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adherentBindingSource, "WorkQuantity", true));
-            this.roleTextbox.Location = new System.Drawing.Point(195, 383);
-            this.roleTextbox.Margin = new System.Windows.Forms.Padding(2);
-            this.roleTextbox.Name = "roleTextbox";
-            this.roleTextbox.Size = new System.Drawing.Size(184, 20);
-            this.roleTextbox.TabIndex = 19;
-            // 
-            // departLabel
-            // 
-            departLabel.AutoSize = true;
-            departLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            departLabel.Location = new System.Drawing.Point(15, 302);
-            departLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            departLabel.Name = "departLabel";
-            departLabel.Size = new System.Drawing.Size(138, 21);
-            departLabel.TabIndex = 20;
-            departLabel.Text = "Date de départ:";
-            // 
-            // etablissementLabel
-            // 
-            etablissementLabel.AutoSize = true;
-            etablissementLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            etablissementLabel.Location = new System.Drawing.Point(15, 342);
-            etablissementLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            etablissementLabel.Name = "etablissementLabel";
-            etablissementLabel.Size = new System.Drawing.Size(122, 21);
-            etablissementLabel.TabIndex = 21;
-            etablissementLabel.Text = "Etablissement:";
-            // 
-            // roleLabel
-            // 
-            roleLabel.AutoSize = true;
-            roleLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            roleLabel.Location = new System.Drawing.Point(15, 382);
-            roleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            roleLabel.Name = "roleLabel";
-            roleLabel.Size = new System.Drawing.Size(82, 21);
-            roleLabel.TabIndex = 22;
-            roleLabel.Text = "Fonction:";
-            // 
-            // adherentBindingSource
-            // 
-            this.adherentBindingSource.DataSource = typeof(Personnel.BOL.Employee);
+            this.bindingSource1.DataSource = typeof(Personnel.BOL.Establishment);
             // 
             // FrmAdherent
             // 
@@ -507,13 +513,14 @@
             this.Text = "Gestion Employés";
             this.Load += new System.EventHandler(this.FrmAdherent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AdherentEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adherentBindingSource)).EndInit();
             this.gbRecherche.ResumeLayout(false);
             this.gbRecherche.PerformLayout();
             this.gbBoutonOpe.ResumeLayout(false);
             this.gbDetails.ResumeLayout(false);
             this.gbDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AfpaPic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.adherentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -544,6 +551,7 @@
         private System.Windows.Forms.TextBox EtablissementTextbox;
         private System.Windows.Forms.TextBox departTextbox;
         private System.Windows.Forms.TextBox arriveeTextbox;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }
 
