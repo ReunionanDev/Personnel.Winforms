@@ -88,16 +88,16 @@ namespace Personnel.Winforms
 
         private void btnRechercher_Click(object sender, EventArgs e)
         {
-            RechercherAdherent();
+            SearchEmployee();
         }
 
-        private Employee SelectionnerAdherentByID(string employeeID)
+        private Employee GetEmployeeByID(string employeeID)
         {
             repository = new PersonnelRepository();
             return repository.GetEmployees().Where(a=>a.EmployeeID==employeeID).FirstOrDefault();
         }
 
-        private Employee SelectionnerAdherent(string debNom)
+        private Employee SelectEmployee(string debNom)
         {
 
             FrmRecAdherent dialog = new FrmRecAdherent(debNom, adherentBindingSource);
@@ -121,11 +121,25 @@ namespace Personnel.Winforms
         private void btnValider_Click(object sender, EventArgs e)
         {
             // Vérifier la validité 
-            if ((adherentBindingSource.Current as Employee).IsValid)
+            if ((adherentBindingSource.Current as Employee).IsValid) //catch if null à ajouter
             {
                 if (contexteActuel == Contexte.Nouveau)
                 {
                     // Create
+                    employee.LastName = nomTextBox.Text.Trim();
+                    employee.FirstName = prenomTextBox.Text.Trim();
+                    employee.BirthDate = Convert.ToDateTime(DateNaissanceTextbox.Text.Trim());
+                    employee.GrossSalary = Convert.ToDecimal(salaireTextbox.Text.Trim());
+                    employee.EmployeeID = adherentIDTextBox.Text.Trim();
+                    employee.StartDate = Convert.ToDateTime(arriveeTextbox.Text.Trim());
+                    employee.EndDate = Convert.ToDateTime(departTextbox.Text.Trim());
+                    employee.WorkQuantity = Convert.ToDecimal(TempsTextbox.Text.Trim());
+
+                    using (PersonnelDBContext context = new PersonnelDBContext())
+                    {
+                        context.Employees.Add(employee);
+                        context.SaveChanges();
+                    }
                 }
                 if (contexteActuel == Contexte.Edition)
                 {
@@ -136,6 +150,10 @@ namespace Personnel.Winforms
                 }
                 GererContextes(Contexte.Initial);
             }
+            else
+            {
+                MessageBox.Show("Vous devez renseigner les champs obligatoires", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnAnnuler_Click(object sender, EventArgs e)
@@ -144,25 +162,25 @@ namespace Personnel.Winforms
             GererContextes(Contexte.Initial);
         }
 
-        private void RechercherAdherent()
+        private void SearchEmployee()
         {
             adherentBindingSource.Clear();
-            Employee adherent = null;
+            Employee employee = null;
             if (!string.IsNullOrEmpty(txtAdherentID.Text))
             {
-                adherent = SelectionnerAdherentByID(txtAdherentID.Text);
-                if (adherent == null)
+                employee = GetEmployeeByID(txtAdherentID.Text);
+                if (employee == null)
                 {
                     AdherentEP.SetError(txtAdherentID, "Identifiant inconnu");
                 }
             }
             else
             {
-                adherent = SelectionnerAdherent(txtDebNom.Text);
+                employee = SelectEmployee(txtDebNom.Text);
             }
-            if (adherent != null)
+            if (employee != null)
             {
-                adherentBindingSource.DataSource = adherent;
+                adherentBindingSource.DataSource = employee;
                 GererContextes(Contexte.Affichage);
             }
         }
@@ -171,7 +189,7 @@ namespace Personnel.Winforms
         {
             if (e.KeyCode == Keys.Enter)
             {
-                RechercherAdherent();
+                SearchEmployee();
             }
         }
 
@@ -179,13 +197,14 @@ namespace Personnel.Winforms
         {
             if (e.KeyCode == Keys.Enter)
             {
-                RechercherAdherent();
+                SearchEmployee();
             }
         }
 
         private void btnNouveau_Click(object sender, EventArgs e)
         {
             GererContextes(Contexte.Nouveau);
+            adherentBindingSource.Clear();
             adherentBindingSource.AddNew();
             AdherentEP.Clear();
         }
