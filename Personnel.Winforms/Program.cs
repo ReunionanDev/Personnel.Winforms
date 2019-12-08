@@ -32,9 +32,9 @@ namespace Personnel.Winforms
             //Database.SetInitializer(new CreateDatabaseIfNotExists<PersonnelDBContext>());
             //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<PersonnelDBContext>());
 
-            PersonnelDBContext dbcontext = new PersonnelDBContext();
+            //PersonnelDBContext dbcontext = new PersonnelDBContext();
             
-            PersonnelRepository repository = new PersonnelRepository();
+            //PersonnelRepository repository = new PersonnelRepository();
             
             /*if (dbcontext.Employees.Count()!=0)
             {

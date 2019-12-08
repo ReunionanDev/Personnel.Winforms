@@ -131,9 +131,15 @@ namespace Personnel.Winforms
                     employee.BirthDate = Convert.ToDateTime(DateNaissanceTextbox.Text.Trim());
                     employee.GrossSalary = Convert.ToDecimal(salaireTextbox.Text.Trim());
                     employee.EmployeeID = adherentIDTextBox.Text.Trim();
-                    employee.StartDate = Convert.ToDateTime(arriveeTextbox.Text.Trim());
-                    employee.EndDate = Convert.ToDateTime(departTextbox.Text.Trim());
-                    employee.WorkQuantity = Convert.ToDecimal(TempsTextbox.Text.Trim());
+                    if (!String.IsNullOrEmpty(arriveeTextbox.Text.Trim()))
+                    {
+                        employee.StartDate = Convert.ToDateTime(arriveeTextbox.Text.Trim());
+                    }
+                    if (!String.IsNullOrEmpty(arriveeTextbox.Text.Trim()))
+                    {
+                        employee.EndDate = Convert.ToDateTime(departTextbox.Text.Trim());
+                    }
+                    employee.WorkQuantity = double.Parse(TempsTextbox.Text.Trim());
 
                     using (PersonnelDBContext context = new PersonnelDBContext())
                     {
@@ -158,6 +164,7 @@ namespace Personnel.Winforms
 
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
+            AdherentEP.Clear();
             adherentBindingSource.CancelEdit();
             GererContextes(Contexte.Initial);
         }
@@ -211,6 +218,7 @@ namespace Personnel.Winforms
 
         private void FrmAdherent_Load(object sender, EventArgs e)
         {
+            PersonnelDBContext dbcontext = new PersonnelDBContext();
             repository = new PersonnelRepository();
             List<Employee> list = repository.GetEmployees();
             adherentBindingSource.DataSource = list;
