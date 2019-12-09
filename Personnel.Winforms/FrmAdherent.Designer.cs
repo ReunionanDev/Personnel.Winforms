@@ -56,7 +56,6 @@
             this.gbDetails = new System.Windows.Forms.GroupBox();
             this.roleTextbox = new System.Windows.Forms.TextBox();
             this.EtablissementTextbox = new System.Windows.Forms.TextBox();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.departTextbox = new System.Windows.Forms.TextBox();
             this.arriveeTextbox = new System.Windows.Forms.TextBox();
             this.TempsTextbox = new System.Windows.Forms.TextBox();
@@ -66,6 +65,7 @@
             this.prenomTextBox = new System.Windows.Forms.TextBox();
             this.adherentIDTextBox = new System.Windows.Forms.TextBox();
             this.AfpaPic = new System.Windows.Forms.PictureBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             label1 = new System.Windows.Forms.Label();
             nomLabel = new System.Windows.Forms.Label();
             prenomLabel = new System.Windows.Forms.Label();
@@ -83,8 +83,8 @@
             this.gbRecherche.SuspendLayout();
             this.gbBoutonOpe.SuspendLayout();
             this.gbDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AfpaPic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -401,16 +401,11 @@
             // 
             // EtablissementTextbox
             // 
-            this.EtablissementTextbox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "Name", true));
             this.EtablissementTextbox.Location = new System.Drawing.Point(195, 343);
             this.EtablissementTextbox.Margin = new System.Windows.Forms.Padding(2);
             this.EtablissementTextbox.Name = "EtablissementTextbox";
             this.EtablissementTextbox.Size = new System.Drawing.Size(184, 20);
             this.EtablissementTextbox.TabIndex = 18;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(Personnel.BOL.Establishment);
             // 
             // departTextbox
             // 
@@ -496,6 +491,10 @@
             this.AfpaPic.TabIndex = 6;
             this.AfpaPic.TabStop = false;
             // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(Personnel.DAL.PersonnelRepository);
+            // 
             // FrmAdherent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -520,8 +519,8 @@
             this.gbBoutonOpe.ResumeLayout(false);
             this.gbDetails.ResumeLayout(false);
             this.gbDetails.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AfpaPic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

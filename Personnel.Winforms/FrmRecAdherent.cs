@@ -46,7 +46,6 @@ namespace Personnel.Winforms
                 adherentBSG.Add(adherentBindingSource.Current);
             }
             DialogResult = DialogResult.OK;
-
         }
 
         private void btnOK_Click(object sender, EventArgs e)

@@ -66,11 +66,11 @@ namespace Personnel.BOL
 
         private bool isValid()
         {
-            //var results = new List<ValidationResult>();
             return  Validator.TryValidateObject(this,
                     new ValidationContext(this, null, null), null, true);
         }
 
+        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void NotifyPropertyChanged([CallerMemberName] string propertyName = "")

@@ -8,14 +8,17 @@ namespace Personnel.BOL
     [Serializable]
     public class Employee : EntityBase
     {
+        #region Fields
         private string _lastName;
         private string _firstName;
         private DateTime _birthDate;
         private decimal _grossSalary;
+        #endregion
 
+        #region Attributs
         [Key]
         [Required(ErrorMessage ="ID is required")]
-        [RegularExpression(@"^[0-9]{2}[A-Za-z]{3}[0-9]{2}\z", ErrorMessage = "ID must respect the format : 11ABC11")]
+        [RegularExpression(@"^[0-9]{2}[A-Za-z]{3}[0-9]{2}\z", ErrorMessage = "ID must respect the format : nnXXXnn n = number X= letter")]
         public string EmployeeID { get; set; }
 
         [Required(ErrorMessage = "Last name required")]
@@ -107,7 +110,7 @@ namespace Personnel.BOL
         [DataType(DataType.Date)]
         public DateTime? EndDate { get; set; }
 
-        
         public double WorkQuantity { get; set; }
+        #endregion
     }
 }

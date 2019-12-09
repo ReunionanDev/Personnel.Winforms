@@ -18,9 +18,9 @@ namespace Personnel.Winforms
         enum Contexte
         {
             Initial,
-            Affichage,
+            Show,
             Edition,
-            Nouveau
+            New
         }
 
         private Contexte contexteActuel;
@@ -33,62 +33,6 @@ namespace Personnel.Winforms
         {
             InitializeComponent();
             GererContextes(Contexte.Initial);
-          //  adherentBindingSource.DataSource = Program.Adherents;
-        }
-
-        private void GererContextes(Contexte contexte)
-        {
-            contexteActuel = contexte;
-            switch (contexte)
-            {
-                case Contexte.Initial:
-                    adherentBindingSource.Clear();
-                    AdherentEP.Clear();
-                    txtAdherentID.Clear();
-                    txtDebNom.Clear();
-                    gbRecherche.Visible = true;
-                    gbDetails.Visible = false;
-                    btnAnnuler.Visible = false;
-                    btnEditer.Visible = false;
-                    btnValider.Visible = false;
-                    btnNouveau.Visible = true;
-                    break;
-                case Contexte.Affichage:
-                    gbRecherche.Visible = true;
-                    gbDetails.Visible = true;
-                    btnAnnuler.Visible = false;
-                    btnEditer.Visible = true;
-                    gbDetails.Enabled = false;
-                    btnValider.Visible = false;
-                    btnNouveau.Visible = true;
-                    break;
-                case Contexte.Edition:
-                    gbRecherche.Visible = false;
-                    gbDetails.Enabled = true;
-                    adherentIDTextBox.ReadOnly = true;
-                    btnAnnuler.Visible = true;
-                    btnEditer.Visible = false;
-                    btnValider.Visible = true;
-                    btnNouveau.Visible = false;
-                    break;
-                case Contexte.Nouveau:
-                    gbRecherche.Visible = false;
-                    gbDetails.Visible = true;
-                    gbDetails.Enabled = true;
-                    adherentIDTextBox.ReadOnly = false;
-                    btnAnnuler.Visible = true;
-                    btnEditer.Visible = false;
-                    btnValider.Visible = true;
-                    btnNouveau.Visible = false;
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        private void btnRechercher_Click(object sender, EventArgs e)
-        {
-            SearchEmployee();
         }
 
         private Employee GetEmployeeByID(string employeeID)
@@ -99,7 +43,6 @@ namespace Personnel.Winforms
 
         private Employee SelectEmployee(string debNom)
         {
-
             FrmRecAdherent dialog = new FrmRecAdherent(debNom, adherentBindingSource);
             DialogResult res = dialog.ShowDialog();
             if (res == DialogResult.OK)
@@ -110,7 +53,29 @@ namespace Personnel.Winforms
             {
                 return null;
             }
+        }
 
+        private void SearchEmployee()
+        {
+            adherentBindingSource.Clear();
+            Employee employee = null;
+            if (!string.IsNullOrEmpty(txtAdherentID.Text))
+            {
+                employee = GetEmployeeByID(txtAdherentID.Text);
+                if (employee == null)
+                {
+                    AdherentEP.SetError(txtAdherentID, "Identifiant inconnu");
+                }
+            }
+            else
+            {
+                employee = SelectEmployee(txtDebNom.Text);
+            }
+            if (employee != null)
+            {
+                adherentBindingSource.DataSource = employee;
+                GererContextes(Contexte.Show);
+            }
         }
 
         private void btnEditer_Click(object sender, EventArgs e)
@@ -121,9 +86,9 @@ namespace Personnel.Winforms
         private void btnValider_Click(object sender, EventArgs e)
         {
             // Vérifier la validité 
-            if ((adherentBindingSource.Current as Employee).IsValid) //catch if null à ajouter
+            if ((adherentBindingSource.Current as Employee).IsValid)
             {
-                if (contexteActuel == Contexte.Nouveau)
+                if (contexteActuel == Contexte.New)
                 {
                     // Create
                     employee.LastName = nomTextBox.Text.Trim();
@@ -169,27 +134,9 @@ namespace Personnel.Winforms
             GererContextes(Contexte.Initial);
         }
 
-        private void SearchEmployee()
+        private void btnRechercher_Click(object sender, EventArgs e)
         {
-            adherentBindingSource.Clear();
-            Employee employee = null;
-            if (!string.IsNullOrEmpty(txtAdherentID.Text))
-            {
-                employee = GetEmployeeByID(txtAdherentID.Text);
-                if (employee == null)
-                {
-                    AdherentEP.SetError(txtAdherentID, "Identifiant inconnu");
-                }
-            }
-            else
-            {
-                employee = SelectEmployee(txtDebNom.Text);
-            }
-            if (employee != null)
-            {
-                adherentBindingSource.DataSource = employee;
-                GererContextes(Contexte.Affichage);
-            }
+            SearchEmployee();
         }
 
         private void txtAdherentID_KeyDown(object sender, KeyEventArgs e)
@@ -210,7 +157,7 @@ namespace Personnel.Winforms
 
         private void btnNouveau_Click(object sender, EventArgs e)
         {
-            GererContextes(Contexte.Nouveau);
+            GererContextes(Contexte.New);
             adherentBindingSource.Clear();
             adherentBindingSource.AddNew();
             AdherentEP.Clear();
@@ -220,9 +167,81 @@ namespace Personnel.Winforms
         {
             PersonnelDBContext dbcontext = new PersonnelDBContext();
             repository = new PersonnelRepository();
-            List<Employee> list = repository.GetEmployees();
-            adherentBindingSource.DataSource = list;
+            //List<Employee> list = repository.GetEmployees();
+            adherentBindingSource.DataSource = repository.GetEmployees();
         }
+
+        #region Methods UI context
+        private void AffichageInitial()
+        {
+            adherentBindingSource.Clear();
+            AdherentEP.Clear();
+            txtAdherentID.Clear();
+            txtDebNom.Clear();
+            gbRecherche.Visible = true;
+            gbDetails.Visible = false;
+            btnAnnuler.Visible = false;
+            btnEditer.Visible = false;
+            btnValider.Visible = false;
+            btnNouveau.Visible = true;
+        }
+
+        private void AffichageShow()
+        {
+            gbRecherche.Visible = true;
+            gbDetails.Visible = true;
+            btnAnnuler.Visible = false;
+            btnEditer.Visible = true;
+            gbDetails.Enabled = false;
+            btnValider.Visible = false;
+            btnNouveau.Visible = true;
+        }
+
+        private void AffichageEdition()
+        {
+            gbRecherche.Visible = false;
+            gbDetails.Enabled = true;
+            adherentIDTextBox.ReadOnly = true;
+            btnAnnuler.Visible = true;
+            btnEditer.Visible = false;
+            btnValider.Visible = true;
+            btnNouveau.Visible = false;
+        }
+
+        private void AffichageNew()
+        {
+            gbRecherche.Visible = false;
+            gbDetails.Visible = true;
+            gbDetails.Enabled = true;
+            adherentIDTextBox.ReadOnly = false;
+            btnAnnuler.Visible = true;
+            btnEditer.Visible = false;
+            btnValider.Visible = true;
+            btnNouveau.Visible = false;
+        }
+
+        private void GererContextes(Contexte contexte)
+        {
+            contexteActuel = contexte;
+            switch (contexte)
+            {
+                case Contexte.Initial:
+                    AffichageInitial();
+                    break;
+                case Contexte.Show:
+                    AffichageShow();
+                    break;
+                case Contexte.Edition:
+                    AffichageEdition();
+                    break;
+                case Contexte.New:
+                    AffichageNew();
+                    break;
+                default:
+                    break;
+            }
+        }
+        #endregion
     }
 }
 

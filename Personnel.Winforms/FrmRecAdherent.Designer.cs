@@ -36,9 +36,6 @@
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.adherentDataGridView = new System.Windows.Forms.DataGridView();
-            this.panelAfpa = new System.Windows.Forms.Panel();
-            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
-            this.adherentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.adherentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prenomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,10 +44,13 @@
             this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WorkQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adherentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panelAfpa = new System.Windows.Forms.Panel();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.adherentDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adherentBindingSource)).BeginInit();
             this.panelAfpa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.adherentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAnnuler
@@ -138,32 +138,6 @@
             this.adherentDataGridView.TabIndex = 3;
             this.adherentDataGridView.DoubleClick += new System.EventHandler(this.adherentDataGridView_DoubleClick);
             // 
-            // panelAfpa
-            // 
-            this.panelAfpa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panelAfpa.Controls.Add(this.pictureBoxLogo);
-            this.panelAfpa.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAfpa.Location = new System.Drawing.Point(0, 0);
-            this.panelAfpa.Name = "panelAfpa";
-            this.panelAfpa.Size = new System.Drawing.Size(1242, 139);
-            this.panelAfpa.TabIndex = 6;
-            // 
-            // pictureBoxLogo
-            // 
-            this.pictureBoxLogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxLogo.Image = global::Personnel.Winforms.Properties.Resources.layout_set_logo;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(436, 0);
-            this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(365, 139);
-            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxLogo.TabIndex = 0;
-            this.pictureBoxLogo.TabStop = false;
-            // 
-            // adherentBindingSource
-            // 
-            this.adherentBindingSource.DataSource = typeof(Personnel.BOL.Employee);
-            // 
             // adherentIDDataGridViewTextBoxColumn
             // 
             this.adherentIDDataGridViewTextBoxColumn.DataPropertyName = "EmployeeID";
@@ -228,6 +202,32 @@
             this.WorkQuantity.ReadOnly = true;
             this.WorkQuantity.Width = 150;
             // 
+            // adherentBindingSource
+            // 
+            this.adherentBindingSource.DataSource = typeof(Personnel.BOL.Employee);
+            // 
+            // panelAfpa
+            // 
+            this.panelAfpa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panelAfpa.Controls.Add(this.pictureBoxLogo);
+            this.panelAfpa.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelAfpa.Location = new System.Drawing.Point(0, 0);
+            this.panelAfpa.Name = "panelAfpa";
+            this.panelAfpa.Size = new System.Drawing.Size(1242, 139);
+            this.panelAfpa.TabIndex = 6;
+            // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxLogo.Image = global::Personnel.Winforms.Properties.Resources.layout_set_logo;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(436, 0);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(365, 139);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLogo.TabIndex = 0;
+            this.pictureBoxLogo.TabStop = false;
+            // 
             // FrmRecAdherent
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -244,9 +244,9 @@
             this.Text = "Liste des employés";
             this.Load += new System.EventHandler(this.FrmRecAdherent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.adherentDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adherentBindingSource)).EndInit();
             this.panelAfpa.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.adherentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

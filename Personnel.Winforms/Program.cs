@@ -13,7 +13,6 @@ namespace Personnel.Winforms
     
     static class Program
     {
-        static public HashSet<Employee> Adherents;
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>

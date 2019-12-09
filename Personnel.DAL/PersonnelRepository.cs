@@ -14,7 +14,7 @@ namespace Personnel.DAL
         public List<Employee> GetEmployees()
         {
             PersonnelDBContext personnelDBContext = new PersonnelDBContext();
-            return personnelDBContext.Employees.ToList();
+            return personnelDBContext.Employees.Include("Establishment").ToList();
         }
     }
 }

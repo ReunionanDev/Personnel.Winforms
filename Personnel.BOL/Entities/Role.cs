@@ -12,7 +12,7 @@ namespace Personnel.BOL
     {
         private string _id;
         private string _label;
-        private decimal _minimumSalary; //code decimal precision in DBContext
+        private decimal _minimumSalary;
 
         [Key]
         [Required]
