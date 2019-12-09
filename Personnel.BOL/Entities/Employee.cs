@@ -110,7 +110,7 @@ namespace Personnel.BOL
         [DataType(DataType.Date)]
         public DateTime? EndDate { get; set; }
 
-        public double WorkQuantity { get; set; }
+        public double? WorkQuantity { get; set; }
         #endregion
     }
 }

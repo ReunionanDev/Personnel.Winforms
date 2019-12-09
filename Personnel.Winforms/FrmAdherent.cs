@@ -47,6 +47,11 @@ namespace Personnel.Winforms
             DialogResult res = dialog.ShowDialog();
             if (res == DialogResult.OK)
             {
+                Employee employee = adherentBindingSource.Current as Employee;
+                Establishment establishment = dbcontext.Establishments.Find(employee.EstablishmentSiret);
+                EtablissementTextbox.Text = establishment.Name;
+                Role role = dbcontext.Roles.Find(employee.RoleId);
+                roleTextbox.Text = role.Label;
                 return adherentBindingSource.Current as Employee;
             }
             else

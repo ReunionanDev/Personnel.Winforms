@@ -16,5 +16,11 @@ namespace Personnel.DAL
             PersonnelDBContext personnelDBContext = new PersonnelDBContext();
             return personnelDBContext.Employees.Include("Establishment").ToList();
         }
+
+        public List<Establishment> GetEstablishment()
+        {
+            PersonnelDBContext personnelDBContext = new PersonnelDBContext();
+            return personnelDBContext.Establishments.ToList();
+        }
     }
 }

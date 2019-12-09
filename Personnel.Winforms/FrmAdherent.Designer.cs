@@ -392,10 +392,10 @@
             // 
             // roleTextbox
             // 
-            this.roleTextbox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adherentBindingSource, "RoleId", true));
             this.roleTextbox.Location = new System.Drawing.Point(195, 383);
             this.roleTextbox.Margin = new System.Windows.Forms.Padding(2);
             this.roleTextbox.Name = "roleTextbox";
+            this.roleTextbox.ReadOnly = true;
             this.roleTextbox.Size = new System.Drawing.Size(184, 20);
             this.roleTextbox.TabIndex = 19;
             // 
@@ -404,6 +404,7 @@
             this.EtablissementTextbox.Location = new System.Drawing.Point(195, 343);
             this.EtablissementTextbox.Margin = new System.Windows.Forms.Padding(2);
             this.EtablissementTextbox.Name = "EtablissementTextbox";
+            this.EtablissementTextbox.ReadOnly = true;
             this.EtablissementTextbox.Size = new System.Drawing.Size(184, 20);
             this.EtablissementTextbox.TabIndex = 18;
             // 
