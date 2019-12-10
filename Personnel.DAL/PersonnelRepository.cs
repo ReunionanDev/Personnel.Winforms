@@ -14,13 +14,19 @@ namespace Personnel.DAL
         public List<Employee> GetEmployees()
         {
             PersonnelDBContext personnelDBContext = new PersonnelDBContext();
-            return personnelDBContext.Employees.Include("Establishment").ToList();
+            return personnelDBContext.Employees.ToList();
         }
 
-        public List<Establishment> GetEstablishment()
+        public List<Establishment> GetEstablishments()
         {
             PersonnelDBContext personnelDBContext = new PersonnelDBContext();
             return personnelDBContext.Establishments.ToList();
+        }
+
+        public List<Role> GetRoles()
+        {
+            PersonnelDBContext personnelDBContext = new PersonnelDBContext();
+            return personnelDBContext.Roles.ToList();
         }
     }
 }

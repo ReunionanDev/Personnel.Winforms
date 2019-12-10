@@ -55,7 +55,7 @@
             this.btnEditer = new System.Windows.Forms.Button();
             this.gbDetails = new System.Windows.Forms.GroupBox();
             this.roleTextbox = new System.Windows.Forms.TextBox();
-            this.EtablissementTextbox = new System.Windows.Forms.TextBox();
+            this.etablissementTextbox = new System.Windows.Forms.TextBox();
             this.departTextbox = new System.Windows.Forms.TextBox();
             this.arriveeTextbox = new System.Windows.Forms.TextBox();
             this.TempsTextbox = new System.Windows.Forms.TextBox();
@@ -366,7 +366,7 @@
             this.gbDetails.Controls.Add(etablissementLabel);
             this.gbDetails.Controls.Add(departLabel);
             this.gbDetails.Controls.Add(this.roleTextbox);
-            this.gbDetails.Controls.Add(this.EtablissementTextbox);
+            this.gbDetails.Controls.Add(this.etablissementTextbox);
             this.gbDetails.Controls.Add(this.departTextbox);
             this.gbDetails.Controls.Add(this.arriveeTextbox);
             this.gbDetails.Controls.Add(ArrivéeLabel);
@@ -399,14 +399,14 @@
             this.roleTextbox.Size = new System.Drawing.Size(184, 20);
             this.roleTextbox.TabIndex = 19;
             // 
-            // EtablissementTextbox
+            // etablissementTextbox
             // 
-            this.EtablissementTextbox.Location = new System.Drawing.Point(195, 343);
-            this.EtablissementTextbox.Margin = new System.Windows.Forms.Padding(2);
-            this.EtablissementTextbox.Name = "EtablissementTextbox";
-            this.EtablissementTextbox.ReadOnly = true;
-            this.EtablissementTextbox.Size = new System.Drawing.Size(184, 20);
-            this.EtablissementTextbox.TabIndex = 18;
+            this.etablissementTextbox.Location = new System.Drawing.Point(195, 343);
+            this.etablissementTextbox.Margin = new System.Windows.Forms.Padding(2);
+            this.etablissementTextbox.Name = "etablissementTextbox";
+            this.etablissementTextbox.ReadOnly = true;
+            this.etablissementTextbox.Size = new System.Drawing.Size(184, 20);
+            this.etablissementTextbox.TabIndex = 18;
             // 
             // departTextbox
             // 
@@ -549,7 +549,7 @@
         private System.Windows.Forms.PictureBox AfpaPic;
         private System.Windows.Forms.TextBox TempsTextbox;
         private System.Windows.Forms.TextBox roleTextbox;
-        private System.Windows.Forms.TextBox EtablissementTextbox;
+        private System.Windows.Forms.TextBox etablissementTextbox;
         private System.Windows.Forms.TextBox departTextbox;
         private System.Windows.Forms.TextBox arriveeTextbox;
         private System.Windows.Forms.BindingSource bindingSource1;

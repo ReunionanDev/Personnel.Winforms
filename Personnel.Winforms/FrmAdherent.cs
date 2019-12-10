@@ -1,29 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Personnel.BOL;
+﻿using Personnel.BOL;
 using Personnel.DAL;
+using System;
+using System.Data;
 using System.Data.Entity;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace Personnel.Winforms
 {
     public partial class FrmAdherent : Form
     {
-        private Contexte contexteActuel;
+        private Context currentContext;
         PersonnelDBContext dbcontext = new PersonnelDBContext();
-        PersonnelRepository repository;
+        PersonnelRepository repository = new PersonnelRepository();
         Employee employee = new Employee();
 
         public FrmAdherent()
         {
             InitializeComponent();
-            GererContextes(Contexte.Initial);
+            GererContextes(Context.Initial);
         }
 
         #region Searching methods
@@ -40,11 +35,17 @@ namespace Personnel.Winforms
             if (res == DialogResult.OK)
             {
                 Employee employee = adherentBindingSource.Current as Employee;
-                Establishment establishment = dbcontext.Establishments.Find(employee.EstablishmentSiret); // Find the etablishment with the primary key in parameter
-                EtablissementTextbox.Text = establishment.Name;
-                Role role = dbcontext.Roles.Find(employee.RoleId); // Find the role with the primary key in parameter
-                roleTextbox.Text = role.Label;
-                return employee;
+                if(employee.Establishment != null)
+                {
+                    Establishment establishment = dbcontext.Establishments.Find(employee.EstablishmentSiret); // Find the etablishment with the primary key in parameter
+                    etablissementTextbox.Text = establishment.Name;
+                }
+                if(employee.Role != null)
+                {
+                    Role role = dbcontext.Roles.Find(employee.RoleId); // Find the role with the primary key in parameter
+                    roleTextbox.Text = role.Label;
+                }
+                return adherentBindingSource.Current as Employee;
             }
             else
             {
@@ -71,7 +72,7 @@ namespace Personnel.Winforms
             if (employee != null)
             {
                 adherentBindingSource.DataSource = employee;
-                GererContextes(Contexte.Show);
+                GererContextes(Context.Show);
             }
         }
         #endregion
@@ -79,7 +80,7 @@ namespace Personnel.Winforms
         #region Controls events
         private void btnEditer_Click(object sender, EventArgs e)
         {
-            GererContextes(Contexte.Edition);
+            GererContextes(Context.Edition);
         }
 
         private void btnValider_Click(object sender, EventArgs e)
@@ -87,9 +88,10 @@ namespace Personnel.Winforms
             // Check if the employee is valid
             if ((adherentBindingSource.Current as Employee).IsValid)
             {
-                if (contexteActuel == Contexte.New)
+                if (currentContext == Context.New)
                 {
                     // Create an employee
+                    Employee employee = new Employee();
                     employee.LastName = nomTextBox.Text.Trim();
                     employee.FirstName = prenomTextBox.Text.Trim();
                     employee.BirthDate = Convert.ToDateTime(DateNaissanceTextbox.Text.Trim());
@@ -99,26 +101,27 @@ namespace Personnel.Winforms
                     {
                         employee.StartDate = Convert.ToDateTime(arriveeTextbox.Text.Trim());
                     }
-                    if (!String.IsNullOrEmpty(arriveeTextbox.Text.Trim()))
+                    if (!String.IsNullOrEmpty(departTextbox.Text.Trim()))
                     {
                         employee.EndDate = Convert.ToDateTime(departTextbox.Text.Trim());
                     }
                     employee.WorkQuantity = double.Parse(TempsTextbox.Text.Trim());
 
-                    using (PersonnelDBContext context = new PersonnelDBContext())
+                    using (PersonnelDBContext dBContext = new PersonnelDBContext())
                     {
-                        context.Employees.Add(employee);
-                        context.SaveChanges();
+                        dbcontext.Employees.Add(employee);
+                        dbcontext.SaveChanges();
                     }
                 }
-                if (contexteActuel == Contexte.Edition)
+                if (currentContext == Context.Edition)
                 {
                     // Update the employee
                     employee = adherentBindingSource.Current as Employee;
+                    dbcontext = new PersonnelDBContext();
                     dbcontext.Entry(employee).State = EntityState.Modified;
                     dbcontext.SaveChanges();
                 }
-                GererContextes(Contexte.Initial);
+                GererContextes(Context.Initial);
             }
             else
             {
@@ -130,7 +133,7 @@ namespace Personnel.Winforms
         {
             AdherentEP.Clear();
             adherentBindingSource.CancelEdit();
-            GererContextes(Contexte.Initial);
+            GererContextes(Context.Initial);
         }
 
         private void btnRechercher_Click(object sender, EventArgs e)
@@ -156,22 +159,22 @@ namespace Personnel.Winforms
 
         private void btnNouveau_Click(object sender, EventArgs e)
         {
-            GererContextes(Contexte.New);
+            GererContextes(Context.New);
             adherentBindingSource.Clear();
+            etablissementTextbox.Text = null;
+            roleTextbox.Text = null;
             adherentBindingSource.AddNew();
             AdherentEP.Clear();
         }
 
         private void FrmAdherent_Load(object sender, EventArgs e)
         {
-            PersonnelDBContext dbcontext = new PersonnelDBContext();
-            repository = new PersonnelRepository();
             adherentBindingSource.DataSource = repository.GetEmployees();
         }
         #endregion
 
         #region UI context management
-        enum Contexte
+        enum Context
         {
             Initial,
             Show,
@@ -227,21 +230,21 @@ namespace Personnel.Winforms
             btnNouveau.Visible = false;
         }
 
-        private void GererContextes(Contexte contexte)
+        private void GererContextes(Context contexte)
         {
-            contexteActuel = contexte;
+            currentContext = contexte;
             switch (contexte)
             {
-                case Contexte.Initial:
+                case Context.Initial:
                     AffichageInitial();
                     break;
-                case Contexte.Show:
+                case Context.Show:
                     AffichageShow();
                     break;
-                case Contexte.Edition:
+                case Context.Edition:
                     AffichageEdition();
                     break;
-                case Contexte.New:
+                case Context.New:
                     AffichageNew();
                     break;
                 default:

@@ -64,6 +64,7 @@ namespace Personnel.BOL
             }
         }
 
+        // check if the entity is valid using the validation context
         private bool isValid()
         {
             return  Validator.TryValidateObject(this,
@@ -76,6 +77,7 @@ namespace Personnel.BOL
         protected void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
+        #region Cloning methods
         public void BeginEdit()
         {
             if (!inTxn)
@@ -117,5 +119,6 @@ namespace Personnel.BOL
                 inTxn = false;
             }
         }
+        #endregion
     }
 }
