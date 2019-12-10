@@ -15,16 +15,7 @@ namespace Personnel.Winforms
 {
     public partial class FrmAdherent : Form
     {
-        enum Contexte
-        {
-            Initial,
-            Show,
-            Edition,
-            New
-        }
-
         private Contexte contexteActuel;
-
         PersonnelDBContext dbcontext = new PersonnelDBContext();
         PersonnelRepository repository;
         Employee employee = new Employee();
@@ -35,6 +26,7 @@ namespace Personnel.Winforms
             GererContextes(Contexte.Initial);
         }
 
+        #region Searching methods
         private Employee GetEmployeeByID(string employeeID)
         {
             repository = new PersonnelRepository();
@@ -48,11 +40,11 @@ namespace Personnel.Winforms
             if (res == DialogResult.OK)
             {
                 Employee employee = adherentBindingSource.Current as Employee;
-                Establishment establishment = dbcontext.Establishments.Find(employee.EstablishmentSiret);
+                Establishment establishment = dbcontext.Establishments.Find(employee.EstablishmentSiret); // Find the etablishment with the primary key in parameter
                 EtablissementTextbox.Text = establishment.Name;
-                Role role = dbcontext.Roles.Find(employee.RoleId);
+                Role role = dbcontext.Roles.Find(employee.RoleId); // Find the role with the primary key in parameter
                 roleTextbox.Text = role.Label;
-                return adherentBindingSource.Current as Employee;
+                return employee;
             }
             else
             {
@@ -82,7 +74,9 @@ namespace Personnel.Winforms
                 GererContextes(Contexte.Show);
             }
         }
+        #endregion
 
+        #region Controls events
         private void btnEditer_Click(object sender, EventArgs e)
         {
             GererContextes(Contexte.Edition);
@@ -90,12 +84,12 @@ namespace Personnel.Winforms
 
         private void btnValider_Click(object sender, EventArgs e)
         {
-            // Vérifier la validité 
+            // Check if the employee is valid
             if ((adherentBindingSource.Current as Employee).IsValid)
             {
                 if (contexteActuel == Contexte.New)
                 {
-                    // Create
+                    // Create an employee
                     employee.LastName = nomTextBox.Text.Trim();
                     employee.FirstName = prenomTextBox.Text.Trim();
                     employee.BirthDate = Convert.ToDateTime(DateNaissanceTextbox.Text.Trim());
@@ -119,7 +113,7 @@ namespace Personnel.Winforms
                 }
                 if (contexteActuel == Contexte.Edition)
                 {
-                    // Update
+                    // Update the employee
                     employee = adherentBindingSource.Current as Employee;
                     dbcontext.Entry(employee).State = EntityState.Modified;
                     dbcontext.SaveChanges();
@@ -172,11 +166,19 @@ namespace Personnel.Winforms
         {
             PersonnelDBContext dbcontext = new PersonnelDBContext();
             repository = new PersonnelRepository();
-            //List<Employee> list = repository.GetEmployees();
             adherentBindingSource.DataSource = repository.GetEmployees();
         }
+        #endregion
 
-        #region Methods UI context
+        #region UI context management
+        enum Contexte
+        {
+            Initial,
+            Show,
+            Edition,
+            New
+        }
+
         private void AffichageInitial()
         {
             adherentBindingSource.Clear();

@@ -8,8 +8,9 @@ using Personnel.BOL;
 
 namespace Personnel.DAL
 {
-    public class PersonnelDBInitializer : DropCreateDatabaseIfModelChanges<PersonnelDBContext>
+    public class PersonnelDBInitializer : CreateDatabaseIfNotExists<PersonnelDBContext>
     {
+        //Populate the database with samples
         protected override void Seed(PersonnelDBContext context)
         {
             IList<Role> defaultRoles = new List<Role>();
@@ -38,6 +39,7 @@ namespace Personnel.DAL
             defaultEmployees.Add(new Employee() { EmployeeID = "57FDQ45", BirthDate = new DateTime(1994, 10, 17), FirstName = "Julie", LastName = "HANNE", StartDate = new DateTime(1998, 02, 14), RoleId = "FM", WorkQuantity = 0.5, GrossSalary = 2000, EstablishmentSiret = "45678912200011" });
             defaultEmployees.Add(new Employee() { EmployeeID = "08NMI39", BirthDate = new DateTime(1977, 09, 11), FirstName = "Laurent", LastName = "PAYET", StartDate = new DateTime(2002, 01, 29), RoleId = "DT", WorkQuantity = 1, GrossSalary = 4555.30m, EstablishmentSiret = "45678912200011" });
             context.Employees.AddRange(defaultEmployees);
+
             base.Seed(context);
         }
     }

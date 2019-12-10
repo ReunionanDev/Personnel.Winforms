@@ -18,7 +18,7 @@ namespace Personnel.BOL
         #region Attributs
         [Key]
         [Required(ErrorMessage ="ID is required")]
-        [RegularExpression(@"^[0-9]{2}[A-Za-z]{3}[0-9]{2}\z", ErrorMessage = "ID must respect the format : nnXXXnn n = number X= letter")]
+        [RegularExpression(@"^[0-9]{2}[A-Za-z]{3}[0-9]{2}\z", ErrorMessage = "ID must respect the format : nnXXXnn n = number X = letter")]
         public string EmployeeID { get; set; }
 
         [Required(ErrorMessage = "Last name required")]

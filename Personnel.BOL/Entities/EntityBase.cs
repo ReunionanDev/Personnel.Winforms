@@ -77,7 +77,7 @@ namespace Personnel.BOL
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
         public void BeginEdit()
-            {
+        {
             if (!inTxn)
             {
                 _clone = this.Clone();

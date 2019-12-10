@@ -16,6 +16,7 @@ namespace Personnel.Services
             
         }
 
+        // Luhn algorithm to check if the siret number is valid
         public static bool Luhn(string digits)
         {
             return digits.All(char.IsDigit) && digits.Reverse()

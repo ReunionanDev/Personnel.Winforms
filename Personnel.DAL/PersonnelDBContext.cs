@@ -12,15 +12,11 @@ namespace Personnel.DAL
     {
         public PersonnelDBContext() : base()
         {
-            //Database.SetInitializer<PersonnelDBContext>(new CreateDatabaseIfNotExists<PersonnelDBContext>());
-            //Database.SetInitializer<PersonnelDBContext>(new DropCreateDatabaseIfModelChanges<PersonnelDBContext>());
-            //Database.SetInitializer<SchoolDBContext>(new DropCreateDatabaseAlways<SchoolDBContext>());
-            //Database.SetInitializer<SchoolDBContext>(new SchoolDBInitializer());
-            Database.SetInitializer(new PersonnelDBInitializer());
+            Database.SetInitializer(new PersonnelDBInitializer()); // Use my custom DB initializer
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Types().Configure(t => t.MapToStoredProcedures());
+            modelBuilder.Types().Configure(t => t.MapToStoredProcedures()); // Generate CUD stored procedures for all entities
         }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Establishment> Establishments { get; set; }

@@ -34,11 +34,6 @@ namespace Personnel.Winforms
             }
         }
 
-        private void adherentDataGridView_DoubleClick(object sender, EventArgs e)
-        {
-            SelectionnerAdherent();
-        }
-
         private void SelectionnerAdherent()
         {
             if (adherentBindingSource.Current != null)
@@ -46,6 +41,11 @@ namespace Personnel.Winforms
                 adherentBSG.Add(adherentBindingSource.Current);
             }
             DialogResult = DialogResult.OK;
+        }
+
+        private void adherentDataGridView_DoubleClick(object sender, EventArgs e)
+        {
+            SelectionnerAdherent();
         }
 
         private void btnOK_Click(object sender, EventArgs e)
